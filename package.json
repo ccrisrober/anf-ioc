@@ -1,11 +1,16 @@
 {
   "name": "anf-ioc",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "Simple IOC module for web and server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "maldicion069 <ccrisrober@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "typescript",
+    "vanilla",
+    "ioc"
+  ],
 }
