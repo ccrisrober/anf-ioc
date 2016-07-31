@@ -2,6 +2,9 @@
 Simple IOC module from my NodeJS Framework. <br />
 This library works with any project based on JavaScript, both web and server.
 
+## About
+We present a class and module version using vanilla javascript and typescript.
+
 ## Examples
 ```javascript
 // Create IOC and save values
@@ -36,5 +39,11 @@ try {
 }
 ```
 
-## About
-We present a class and module version using vanilla javascript and typescript.
+## TODO
+- [x] $get and $set
+- [x] $call
+- [x] $inject
+- [x] $invoke
+- [ ] $singleton
+- [ ] $provider
+- [ ] $factory
