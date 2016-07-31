@@ -17,7 +17,7 @@ module IOC2 {
 	}
 	function _inject(args: string[]) {
 		var values : string[] = [];
-		console.log(args);
+		// console.log(args);
 		for(var i = 0; i < args.length; i++) {
 			var d = $data[args[i]];
 			if(d === undefined || d === null) {
@@ -39,7 +39,7 @@ module IOC2 {
 	}
 	export function $invoke(args : Array<string>, fn) {
 		var values = _inject(args);
-		console.log(values);
+		// console.log(values);
 		return fn.apply(this, values);
 	}
 	export function $call(fn: Function) {

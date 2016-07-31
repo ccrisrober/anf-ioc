@@ -18,7 +18,7 @@ var ioc = (function () {
 	};
 	ioc.prototype._inject = function (args) {
 		var values = [];
-		console.log(args);
+		// console.log(args);
 		for (var i = 0; i < args.length; i++) {
 			var d = this.$data[args[i]];
 			if (d === undefined || d === null) {
@@ -44,7 +44,7 @@ var ioc = (function () {
 	};
 	ioc.prototype.$invoke = function (args, fn) {
 		var values = this._inject(args);
-		console.log(values);
+		// console.log(values);
 		return fn.apply(this, values);
 	};
 	ioc.prototype.$call = function (fn) {

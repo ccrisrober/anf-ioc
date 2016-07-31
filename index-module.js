@@ -19,7 +19,7 @@ var ioc;
 	ioc.$set = $set;
 	function _inject(args) {
 		var values = [];
-		console.log(args);
+		// console.log(args);
 		for (var i = 0; i < args.length; i++) {
 			var d = $data[args[i]];
 			if (d === undefined || d === null) {
@@ -46,7 +46,7 @@ var ioc;
 	ioc.$inject = $inject;
 	function $invoke(args, fn) {
 		var values = _inject(args);
-		console.log(values);
+		// console.log(values);
 		return fn.apply(this, values);
 	}
 	ioc.$invoke = $invoke;

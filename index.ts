@@ -18,7 +18,7 @@ class IOC {
 	}
 	protected _inject(args: string[]) {
 		var values : string[] = [];
-		console.log(args);
+		// console.log(args);
 		for(var i = 0; i < args.length; i++) {
 			var d = this.$data[args[i]];
 			if(d === undefined || d === null) {
@@ -40,7 +40,7 @@ class IOC {
 	}
 	public $invoke(args : Array<string>, fn) {
 		var values = this._inject(args);
-		console.log(values);
+		// console.log(values);
 		return fn.apply(this, values);
 	}
 	public $call(fn: Function) {
