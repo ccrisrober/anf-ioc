@@ -1,5 +1,5 @@
-# ANF-IOC (Another NodeJS Framework (Inversion of Control module))
-Simple IOC module from my NodeJS Framework.
+# Another NodeJS Framework (Inversion of Control module)
+Simple IOC module from my NodeJS Framework. <br />
 This library works with any project based on JavaScript, both web and server.
 
 ## Examples
