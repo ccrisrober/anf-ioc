@@ -44,6 +44,8 @@ try {
 - [x] $call
 - [x] $inject
 - [x] $invoke
+- [x] Argument simple validations
+- [x] Add all
 - [ ] $singleton
 - [ ] $provider
 - [ ] $factory

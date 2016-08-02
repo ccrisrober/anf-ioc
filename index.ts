@@ -3,28 +3,35 @@ function IOCDepNotFound(key) {
 	this.name = "IOCDepNotFound";
 }
 class IOC {
-	public $data = {};
+	public _data : { [key:string]:any; } = {};
 	constructor() {
+		this._data = {};
 	}
-	public $get(key) {
-		var value = this.$data[key];
+	public $get(key: string) {
+		if(typeof key !== "string") {
+			throw new TypeError("key argument must be a string");
+		}
+		var value = this._data[key];
 		if(value === undefined || value === null) {
 			throw new IOCDepNotFound(key);
 		}
 		return value;
 	}
-	public $set(key, value) {
-		this.$data[key] = value;
+	public $set(key: string, value : any) {
+		if(typeof key !== "string") {
+			throw new TypeError("key argument must be a string");
+		}
+		this._data[key] = value;
 	}
 	protected _inject(args: string[]) {
 		var values : string[] = [];
 		// console.log(args);
 		for(var i = 0; i < args.length; i++) {
-			var d = this.$data[args[i]];
+			var d = this._data[args[i]];
 			if(d === undefined || d === null) {
 				throw new IOCDepNotFound(args[i]);
 			}
-			values.push(this.$data[args[i]]);
+			values.push(this._data[args[i]]);
 		}
 		return values;
 	}
@@ -49,9 +56,9 @@ class IOC {
 		return fn.apply(this, values);
 	}
 	
-	private _getArgs(func: Function) {
+	private _getArgs(fn: Function) {
 		// First match everything inside the function argument parens.
-		var args : string = func.toString().match(/function\s.*?\(([^)]*)\)/)[1];
+		var args : string = fn.toString().match(/function\s.*?\(([^)]*)\)/)[1];
 		
 		// Split the arguments string into an array comma delimited.
 		var mapstr : string[] = args.split(',').map((arg) => {
@@ -63,5 +70,29 @@ class IOC {
 			// Ensure no undefined values are added.
 			return arg;
 		});
+	}
+	public keys() {
+		return Object.keys(this._data);
+	}
+	public has(key: string) {
+		if(typeof key !== "string") {
+			throw new TypeError("key argument must be a string");
+		}
+		return (key in this._data === true);
+	}
+	public remove(key: string) {
+		if(typeof key !== "string") {
+			throw new TypeError("key argument must be a string");
+		}
+		delete this._data[key];
+	}
+	public addList(list : { [key:string]:any; }) {
+		for (var key in list) {
+			var value = list[key];
+			this.$set(key, value);
+		}
+	}
+	public _getAll() {
+		return this._data;
 	}
 };
