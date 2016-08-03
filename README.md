@@ -34,6 +34,14 @@ try {
 			alert(name2);
 			alert(name3);
 		});
+	ioc.$singleton("timeNow", function() {
+		return new Date().getTime();
+	});
+	setInterval(function() {
+		ioc.$invoke(["timeNow"], function(t) {
+			console.log(t);
+		});
+	}, 2500);
 } catch(e) {
 	console.log(e);
 }
@@ -46,6 +54,6 @@ try {
 - [x] $invoke
 - [x] Argument simple validations
 - [x] Add all
-- [ ] $singleton
+- [x] $singleton
 - [ ] $provider
 - [ ] $factory
