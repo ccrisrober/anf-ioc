@@ -57,3 +57,5 @@ try {
 - [x] $singleton
 - [ ] $provider
 - [ ] $factory
+- [x] Testing
+- [x] Documentation

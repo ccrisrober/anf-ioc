@@ -4,7 +4,8 @@
   "description": "Simple IOC module for web and server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests",
+    "docu": "documentation build -e js -f html -o ./documentation -g"
   },
   "author": "maldicion069 <ccrisrober@gmail.com>",
   "license": "ISC",
@@ -12,5 +13,9 @@
     "typescript",
     "vanilla",
     "ioc"
-  ]
+  ],
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.0"
+  }
 }
