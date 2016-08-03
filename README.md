@@ -1,4 +1,5 @@
 # Inversion of Control module
+## (Deprecated): Moved to https://github.com/maldicion069/light-ioc
 Simple IOC module from my NodeJS Framework. <br />
 This library works with any project based on JavaScript, both web and server.
 
