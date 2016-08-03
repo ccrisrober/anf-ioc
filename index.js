@@ -154,3 +154,5 @@ var IOC = (function () {
     return IOC;
 }());
 ;
+
+exports = module.exports = IOC;
